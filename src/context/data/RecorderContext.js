@@ -1,6 +1,5 @@
 // record context
 import createDataContext from "../createDataContext";
-import { firebaseStims } from "../../functions/firestore";
 import { batch } from "react-redux";
 
 // functions
@@ -31,21 +30,7 @@ const recordInitialState = {
 	playUrl: "",
 	audioBuffer: [],
 
-	stims: {},
-	stimLabels: [],
-	currentStim: {},
-	totalStimCount: 0,
-	stimOrder: [],
-	stimAnim: true,
-
 	seconds: 0,
-
-	vadRes: {
-		count: 0,
-		avg: 0,
-		score: 0,
-		calc: false,
-	},
 };
 
 // Reducer

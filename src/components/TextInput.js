@@ -54,6 +54,7 @@ export default function TextInput() {
 				sx={{ width: "8px" }}
 				onClick={set ? handleReset : handleSet}
 				href={"/hw1"}
+				disabled={name.length < 2}
 			>
 				{set ? "Reset" : "Go!"}
 			</Button>

@@ -10,6 +10,7 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import React from "react";
 import classes from "../../styles/SlidePanel.module.css";
+import { PROJECT_BY } from "../../utils/config";
 import { Recorder } from "../Recorder";
 
 const QuestionA = ({ question }) => {
@@ -72,13 +73,11 @@ export function VerticalLinearStepper({ elements }) {
 							optional={
 								step.split(" ").length > 1 ? (
 									<Typography variant="caption">
-										Record as you speak the above sentence;
-										Repeat 3 times
+										Sentence
 									</Typography>
 								) : (
 									<Typography variant="caption">
-										Record as you say the above word, Repeat
-										3 times
+										Word
 									</Typography>
 								)
 							}
@@ -86,7 +85,13 @@ export function VerticalLinearStepper({ elements }) {
 							{step}
 						</StepLabel>
 						<StepContent>
-							<BasicTabs />
+							<BasicTabs
+								type={
+									step.split(" ").length > 1
+										? "sentence"
+										: "word"
+								}
+							/>
 
 							<Box sx={{ mb: 2 }}>
 								<div>
@@ -140,9 +145,17 @@ function TabPanel(props) {
 			{value === index && (
 				<Box sx={{ p: 3 }}>
 					<Typography
-						variant="body1"
 						gutterBottom
+						variant="body1"
 					>{`Speak at a ${tag} rate`}</Typography>
+					<Typography
+						gutterBottom
+						variant="body2"
+					>{`Click arrow -> after recording`}</Typography>
+					<Typography
+						gutterBottom
+						variant="body2"
+					>{`Repeat 3 times`}</Typography>
 					<>{children}</>
 				</Box>
 			)}
@@ -158,11 +171,22 @@ function a11yProps(index, tag) {
 	};
 }
 
-export function BasicTabs() {
+export function BasicTabs({ type }) {
 	const [value, setValue] = React.useState(0);
+	const [filename, setFilename] = useState("");
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
+
+		const info = {
+			h1: 1,
+			qn: 1,
+			by: PROJECT_BY,
+			con: "NANA".t,
+			stype: type.toUpperCase(),
+		};
+
+		const filename = `H${info.hn}_Q${info.qn}_${info.by}_${info.con}_${info.stype}_${info.rate}_${info.id}.wav`;
 	};
 
 	return (
@@ -178,13 +202,13 @@ export function BasicTabs() {
 					<Tab label="Fast" {...a11yProps(2, "fast")} />
 				</Tabs>
 			</Box>
-			<TabPanel value={value} index={0} tag="normal">
+			<TabPanel value={value} index={0} type={type} tag="normal">
 				<Recorder />
 			</TabPanel>
-			<TabPanel value={value} index={1} tag="slow">
+			<TabPanel value={value} index={1} type={type} tag="slow">
 				<Recorder />
 			</TabPanel>
-			<TabPanel value={value} index={2} tag="fast">
+			<TabPanel value={value} index={2} type={type} tag="fast">
 				<Recorder />
 			</TabPanel>
 		</Box>

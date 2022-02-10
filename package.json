@@ -16,11 +16,14 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "latest",
+    "firebase": "^9.6.6",
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-dropzone": "^11.4.2"
+    "react-dropzone": "^11.4.2",
+    "react-redux": "^7.2.6",
+    "standardized-audio-context": "^25.3.21"
   },
   "devDependencies": {
     "eslint": "latest",
