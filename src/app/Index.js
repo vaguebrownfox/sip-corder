@@ -4,11 +4,7 @@ import Layout from "../components/Layout";
 import App from "./App";
 
 const Index = () => {
-	return (
-		<Layout>
-			<App />
-		</Layout>
-	);
+	return <App />;
 };
 
 export default Index;

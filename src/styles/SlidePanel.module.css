@@ -1,0 +1,25 @@
+.root {
+	margin-top: 2rem;
+}
+
+/* svg data */
+
+.dot {
+	color: black;
+}
+
+.axis line,
+.axis path {
+	stroke: #aaa;
+	stroke-width: 1px;
+}
+
+.axis text {
+	fill: #aaa;
+}
+
+.radiobuttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

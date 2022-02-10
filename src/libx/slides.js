@@ -1,25 +1,7 @@
-export function getAllSlideIds() {
-	// Returns an array that looks like this:
-	const slides = [
-		{
-			params: {
-				sid: "1",
-			},
-		},
-		{
-			params: {
-				sid: "2",
-			},
-		},
-	];
+export function getAllHWorksIds() {
+	const keys = [1, 2, 3, 4];
 
-	return slides;
-}
+	const qids = keys.map((s, _) => ({ params: { qid: `${s}` } }));
 
-export function getSlideData(sid) {
-	// Combine the data with the id
-	return {
-		sid,
-		label: `${sid}-slide`,
-	};
+	return qids;
 }
