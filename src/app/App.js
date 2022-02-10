@@ -16,7 +16,6 @@ const App = React.memo(function App({ src, children, title }) {
 			<h4>{PROJECT_DESC}</h4>
 			<Box mb={2}>
 				<TextInput />
-				<HWList />
 			</Box>
 		</div>
 	);

@@ -34,6 +34,11 @@ export default function TextInput() {
 			}}
 			noValidate
 			autoComplete="off"
+			onSubmit={(e) => {
+				e.preventDefault();
+				console.log("submit");
+				handleSet();
+			}}
 		>
 			<TextField
 				id="outlined-basic"
@@ -48,6 +53,7 @@ export default function TextInput() {
 				variant="contained"
 				sx={{ width: "8px" }}
 				onClick={set ? handleReset : handleSet}
+				href={"/hw1"}
 			>
 				{set ? "Reset" : "Go!"}
 			</Button>
