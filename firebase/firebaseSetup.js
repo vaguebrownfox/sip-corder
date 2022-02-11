@@ -1,4 +1,4 @@
-const { PROJECT_BY } = require("../utils/config");
+const { PROJECT_BY } = require("../src/utils/config");
 
 // Firebase
 exports.PROJECT_ID = "sip-corder";

@@ -10,7 +10,7 @@ export default function TextInput() {
 	const regxUN = /^[a-zA-Z]+$/;
 	const handleInput = (e) => {
 		let input = e.target.value.toLowerCase();
-		input = regxUN.test(input) ? input : name;
+		input = regxUN.test(input) || input == "" ? input : name;
 		setName(input.toUpperCase());
 	};
 

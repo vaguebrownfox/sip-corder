@@ -1,4 +1,4 @@
-import { PROJECT_BY } from "../utils/config";
+import { PROJECT_BY } from "../src/utils/config";
 import { stor } from "./firebase";
 import { AUDIO_DATA_FOLDER, PROJECT_ID } from "./firebaseSetup";
 

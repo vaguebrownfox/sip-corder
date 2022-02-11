@@ -26,29 +26,6 @@ const QuestionA = ({ question }) => {
 	);
 };
 
-export default QuestionA;
-
-const steps = [
-	{
-		label: "Select campaign settings",
-		description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
-	},
-	{
-		label: "Create an ad group",
-		description:
-			"An ad group contains one or more ads which target a shared set of keywords.",
-	},
-	{
-		label: "Create an ad",
-		description: `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`,
-	},
-];
-
 export function VerticalLinearStepper({ elements }) {
 	const [activeStep, setActiveStep] = React.useState(0);
 
@@ -173,7 +150,7 @@ function a11yProps(index, tag) {
 
 export function BasicTabs({ type }) {
 	const [value, setValue] = React.useState(0);
-	const [filename, setFilename] = useState("");
+	const [filename, setFilename] = React.useState("");
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
@@ -182,11 +159,12 @@ export function BasicTabs({ type }) {
 			h1: 1,
 			qn: 1,
 			by: PROJECT_BY,
-			con: "NANA".t,
+			con: "NANA",
 			stype: type.toUpperCase(),
 		};
 
 		const filename = `H${info.hn}_Q${info.qn}_${info.by}_${info.con}_${info.stype}_${info.rate}_${info.id}.wav`;
+		setFilename(filename);
 	};
 
 	return (
@@ -214,3 +192,5 @@ export function BasicTabs({ type }) {
 		</Box>
 	);
 }
+
+export default QuestionA;

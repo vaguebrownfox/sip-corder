@@ -4,7 +4,7 @@ import QuestionA from "../../src/components/ahomew1/QuestionA";
 
 const qn = 1;
 
-const q1 = () => {
+const QA = () => {
 	return (
 		<Box mb={2} ml={2} justifyContent="center">
 			<QuestionA
@@ -32,4 +32,4 @@ const q1 = () => {
 	);
 };
 
-export default q1;
+export default QA;

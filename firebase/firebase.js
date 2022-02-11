@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import { firebaseConfig } from "./firebaseConfig";
 import "firebase/storage";
 
-if (!firebase.apps.length) {
+if (!firebase.getApps().length) {
 	firebase.initializeApp(firebaseConfig);
 }
 

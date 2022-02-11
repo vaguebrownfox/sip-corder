@@ -11,7 +11,7 @@ import {
 	createAudioBuffer,
 	audioBufferToWaveBlob,
 } from "../../functions/recorder";
-import { firebaseUserAudio } from "../../functions/storage";
+import { firebaseUserAudio } from "../../../firebase/storage";
 
 // Initial State
 const recordInitialState = {
@@ -99,14 +99,6 @@ const recordReducer = (state, action) => {
 			return state;
 	}
 };
-
-function shuffleArray(array) {
-	for (let i = array.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[array[i], array[j]] = [array[j], array[i]];
-	}
-	return array;
-}
 
 // Actions
 const recordLoadAction = (dispatch) => {
